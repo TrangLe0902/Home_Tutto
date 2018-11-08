@@ -1,0 +1,89 @@
+.home-banner //list banner
+	position: relative
+	.owl-carousel
+		.owl-nav //mobile
+			button
+				width: 30px
+				height: 30px
+		.owl-dots //desktop
+			+pos(abs, null null 0 0)
+			width: 100%
+			.owl-dot
+				span
+					border-radius: 25%
+					border: 1px solid $hover
+					background: none
+				&.active, &:hover
+					span
+						background: $hover
+		.item //mobile
+			position: relative
+			.title
+				+pos(abs, nul nul 0 0)
+				width: 100%
+				text-align: center
+				padding-bottom: 1rem
+				color: #fff
+				text-transform: uppercase
+			+media-breakpoint-up(sm) //desktop
+				.title
+					padding-bottom: 2rem
+					font-size: 2rem
+.service //Serivce
+	background: url('../img/home_bg_service.png')
+	padding: 10rem 0
+	background-size: cover //cho hình ko bị lặp lại
+	background-attachment: fixed //cho hình cứng
+	.text
+		h1
+			color: #fff
+			text-align: center
+			margin-bottom: 3rem
+			+fz(2rem)
+			text-transform: uppercase
+		span
+			display: inline-block
+			background: $hover
+			height: 0.25rem
+			width: 5rem
+			position: relative
+			top: -2.25rem
+			right: 0
+			&:before,
+			&:after
+				content: ''
+				display: block
+			&:before
+				position: absolute
+				width: 0
+				height: 0
+				border-top: 0.25rem solid $hover
+				border-left: 0.25rem solid transparent
+				left: -0.25rem
+			&:after
+				position: absolute
+				width: 0
+				height: 0
+				border-bottom: 0.25rem solid $hover
+				border-right: 0.25rem solid transparent
+				right: -0.25rem
+	.list
+		.item
+			margin-bottom: 1rem
+			figure
+				background: rgba(255,255,255,0.5)
+				padding: 3rem
+				height: 100%
+				display: flex
+				align-items: center
+				img
+					max-width: 100%
+	+media-breakpoint-up(sm) //mobile
+		h1
+			margin-bottom: 2rem
+.home-promotion
+	padding: 3rem 0
+	.box
+		background: url('../img/home_bg_promotion.png')
+		padding: 8rem 0
+		background-size: cover

@@ -1,0 +1,51 @@
+extends _layout/layout
+
+//- Các giá trị mặc định cho trang web
+block variables
+	- var title = 'Home'
+	- var description = 'Description for home page'
+	- var bodyclass = 'home'
+
+//- Phần khai báo body
+block body
+	//- list banner
+	section.home-banner
+		.owl-carousel.owl-theme
+			.item
+				img(src="./img/slider_home_01.png", alt="", srcset="")
+				.title Trải nghiệm vượt trội cùng Tutto
+			.item
+				img(src="./img/slider_home_02.png", alt="", srcset="")
+			.item
+				img(src="./img/slider_home_03.png", alt="", srcset="")
+			.item
+				img(src="./img/slider_home_04.png", alt="", srcset="")
+	//- Service
+	section.service
+		.container
+			.row.text
+				.col.text-center
+					h1 sản phẩm nổi bật
+					span
+			.row.list
+				.col-sm-4.item
+					figure
+						img(src="./img/service_home_01.png", alt="", srcset="")
+				.col-sm-4.item
+					figure
+						img(src="./img/service_home_02.png", alt="", srcset="")
+				.col-sm-4.item
+					figure
+						img(src="./img/service_home_03.png", alt="", srcset="")
+	section.home-promotion
+		.container
+			.row
+				.col
+					.box
+						.row
+							.col-sm-6
+								h1 chương trình khuyến mãi
+								p Cùng với nhiều chiết khấu và ưu đãi hấp dẫn, Totto luôn sẵn sàng đồng hành cùng bạn trên mợi chặn đường
+								a(href="#") xem thêm
+							.col-sm-6
+
