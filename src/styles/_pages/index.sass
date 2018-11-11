@@ -1,10 +1,20 @@
 .home-banner //list banner
 	position: relative
-	.owl-carousel
+	.owl-theme
 		.owl-nav //mobile
 			button
 				width: 30px
 				height: 30px
+			.owl-prev //bên trái
+				position: absolute
+				left: 0.25rem
+				bottom: 50%
+				background: #6c757d
+			.owl-next //bên phãi
+				position: absolute
+				right: 0.25rem
+				bottom: 50%
+				background: #6c757d
 		.owl-dots //desktop
 			+pos(abs, null null 0 0)
 			width: 100%
@@ -25,22 +35,27 @@
 				padding-bottom: 1rem
 				color: #fff
 				text-transform: uppercase
+		&:hover
+			.owl-prev
+				.span
+					color: $hover
 			+media-breakpoint-up(sm) //desktop
 				.title
 					padding-bottom: 2rem
 					font-size: 2rem
-.service //Serivce
+.service //Sản phẩm nổi bậc
 	background: url('../img/home_bg_service.png')
 	padding: 10rem 0
 	background-size: cover //cho hình ko bị lặp lại
 	background-attachment: fixed //cho hình cứng
 	.text
-		h1
+		h2
 			color: #fff
 			text-align: center
 			margin-bottom: 3rem
 			+fz(2rem)
 			text-transform: uppercase
+			margin-top: -7rem
 		span
 			display: inline-block
 			background: $hover
@@ -70,6 +85,8 @@
 	.list
 		.item
 			margin-bottom: 1rem
+			&:last-child
+				margin-bottom: -6rem
 			figure
 				background: rgba(255,255,255,0.5)
 				padding: 3rem
@@ -78,12 +95,236 @@
 				align-items: center
 				img
 					max-width: 100%
-	+media-breakpoint-up(sm) //mobile
-		h1
-			margin-bottom: 2rem
-.home-promotion
+				&:hover
+					background: #fff
+					border-radius: 20px
+					transition-duration: 1s
+	+media-breakpoint-up(sm) //desktop
+		.text
+			h2
+				margin-bottom: 2rem
+		.list
+			.item
+				margin-bottom: -4rem
+				&:last-child
+					margin-bottom: -4rem
+.home-promotion //CT khuyến mãi
 	padding: 3rem 0
 	.box
-		background: url('../img/home_bg_promotion.png')
-		padding: 8rem 0
+		background: url('../img/home_bg_promotion.png') no-repeat center
+		padding: 8rem 3.25rem
 		background-size: cover
+		color: #fff
+		h1
+			text-transform: uppercase
+		p
+			+fz(1.25rem)
+		a
+			background: $hover
+			border: 1px solid $hover
+			text-transform: uppercase
+			+pad(0.25rem 4rem)
+			+fz(1.5rem)
+			margin-top: 1.25rem
+			&:hover
+				color: #000
+				transition-duration: 1s
+				background: $pumpkin
+				border: 1px solid $pumpkin
+		span
+			display: inline-block
+			background: $hover
+			height: 0.25rem
+			width: 5rem
+			position: relative
+			top: -1.25rem
+			right: 0
+			&:before,
+			&:after
+				content: ''
+				display: block
+			&:before
+				position: absolute
+				width: 0
+				height: 0
+				border-top: 0.25rem solid $hover
+				border-left: 0.25rem solid transparent
+				left: -0.25rem
+			&:after
+				position: absolute
+				width: 0
+				height: 0
+				border-bottom: 0.25rem solid $hover
+				border-right: 0.25rem solid transparent
+				right: -0.25rem
+.home-form //Giới thiếu sản phẩm
+	figure // mobile
+		img
+			width: 100%
+		figcaption
+			h2
+				text-transform: uppercase
+				font-weight: bold
+				+fz(2rem)
+				margin-top: 1rem
+			span
+				display: inline-block
+				background: $hover
+				height: 0.25rem
+				width: 5rem
+				position: relative
+				top: -1.25rem
+				right: 0
+				&:before,
+				&:after
+					content: ''
+					display: block
+				&:before
+					position: absolute
+					width: 0
+					height: 0
+					border-top: 0.25rem solid $hover
+					border-left: 0.25rem solid transparent
+					left: -0.25rem
+				&:after
+					position: absolute
+					width: 0
+					height: 0
+					border-bottom: 0.25rem solid $hover
+					border-right: 0.25rem solid transparent
+					right: -0.25rem
+			.icon
+				color: $hover
+				+fz(3rem)
+			&:hover
+				.icon
+					color: #000
+					transition-duration: 0.5s
+			.form-group
+				.form-control
+					margin-bottom: 1rem
+					background: #7f8c8d38
+	+media-breakpoint-up(lg) // desktop
+		figure
+			position: relative
+			text-align: right
+			width: 100%
+			img
+				width: initial
+			figcaption
+				+pos(abs, 50% null null 0)
+				background: #fff
+				width: 50%
+				+pad(4rem 8rem 4rem 2rem)
+				text-align: left
+				transform: translateY(-50%)
+				.icon
+					+pos(abs, 50% 4rem null null)
+					transform: translateY(-50%)
+				&:hover
+					.icon
+						color: $hover
+						+fz(6rem)
+						transition-duration: 0.5s
+	.banhxe
+		display: none
+		max-width: 80px
+		background: url(../img/home_banhxe.png) no-repeat center top
+		background-size: cover
+		+media-breakpoint-up(sm)
+			display: flex
+.home-new //Tin tức-new
+	+pad(3rem)
+	background: url('../img/home_bg_new.png')
+	background-size: cover
+	background-attachment: fixed
+	.tieude
+		width: 100%
+		h2 //mobile
+			text-align: center
+			text-transform: uppercase
+			+fz(2rem)
+			font-weight: bold
+	.cheo
+		width: 100%
+		display: flex
+		justify-content: center
+		align-items: center
+		p
+			&:before
+			&:after
+				width: 150px
+				height: 4px
+				transform: skew(40deg)
+				background: $hover
+				content: ''
+				display: block
+	+media-breakpoint-up(sm) //Tiêu đề dạng desktop
+		span
+			top: -0.25rem
+			right: -37rem
+	.new
+		.new-left //phần bên trái
+			figure
+				position: relative
+				figcaption
+					width: 100%
+					text-align: left
+					+pad(0 0 -5px 1rem)
+					+pos(abs, null null 0 0)
+					color: #fff
+					+fz(1rem)
+		.new-right //phần bên phải
+			.new-img1
+				background: url('../img/home_new_04.png') no-repeat center
+				background-size: cover
+				padding: 6rem
+				z-index: 2
+			.new-img2
+				background: url('../img/home_new_05.png') no-repeat center
+				background-size: cover
+				padding: 6rem
+				z-index: 2
+			.new-text1
+				// display: none
+				background: #fff
+				+pad(1rem)
+				z-index: 0
+				// display: none
+				h2
+					font-weight: bold
+					+fz(1rem)
+					text-transform: uppercase
+				p
+					color: $brown
+				.link
+					text-align: right
+					a
+						border: 1px solid $hover
+						background: $hover
+						text-align: right
+						font-weight: bold
+						&:hover
+							color: #000
+							background: $pumpkin	
+			// &:hover
+			// 	display: none
+			// 	z-index: 0
+			// 	.new-text
+			// 		z-index: 1
+			// 		opacity: 100%
+		+media-breakpoint-up(sm) //desktop
+			.new-left //phần bên trái
+				figure
+					position: relative
+					figcaption
+						+fz(2.5rem)
+						+pad(0 0 1rem 3rem)
+			.new-right //phần bên phải
+				+pad(0)
+		// 	.new-right //phần bên phải
+		// 		.new-text
+		// 			h2
+		// 				+fz(0.9rem)
+		// 			p
+		// 				+fz(0.8rem)
